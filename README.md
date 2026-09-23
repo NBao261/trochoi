@@ -4,6 +4,15 @@ Quiz realtime cho lớp học, tối ưu khoảng 12 người. Mỗi người ch
 
 **Production:** <https://trochoi-one.vercel.app>
 
+## Trạng thái triển khai hiện tại
+
+- GitHub: <https://github.com/NBao261/trochoi>
+- Vercel Production: <https://trochoi-one.vercel.app>
+- Firebase Project ID: `trochoi-mln131-nbao261`
+- Realtime Database: vùng Singapore (`asia-southeast1`)
+- Gói dịch vụ: Firebase Spark và Vercel Hobby, không yêu cầu bật thanh toán cho cấu hình hiện tại
+- Authentication: Anonymous đã bật; Database Security Rules đã được triển khai
+
 ## Kiến trúc triển khai
 
 ```text
@@ -66,12 +75,14 @@ Khi chưa cấu hình Firebase, ứng dụng chạy ở **Demo cục bộ**. Có
 
 ## 3. Tạo và cấu hình Firebase
 
+Repository này đã được nối với Firebase project `trochoi-mln131-nbao261`. Các bước 3.1–3.4 bên dưới chỉ cần thực hiện khi fork dự án hoặc muốn dùng một Firebase project khác.
+
 ### 3.1. Tạo project riêng
 
 1. Mở [Firebase Console](https://console.firebase.google.com/).
 2. Chọn **Create a project**.
 3. Đặt tên, ví dụ `Tro choi MLN131`.
-4. Project ID nên dùng `trochoi-mln131-nbao261`; nếu tên này đã tồn tại toàn cầu, thêm một dãy số ngắn phía sau.
+4. Chọn một Project ID chưa tồn tại toàn cầu. Project hiện tại của repository là `trochoi-mln131-nbao261`.
 5. Google Analytics không bắt buộc cho trò chơi này, có thể tắt để thiết lập nhanh hơn.
 
 Không dùng chung project Firebase đang chứa dữ liệu của ứng dụng khác.
@@ -105,7 +116,7 @@ Nếu bỏ qua bước này, người chơi sẽ gặp lỗi `auth/operation-not
 Lưu ý: Firebase không cho đổi vùng của database sau khi đã tạo. URL thường có dạng:
 
 ```text
-https://YOUR_DATABASE_NAME.asia-southeast1.firebasedatabase.app
+https://trochoi-mln131-nbao261-default-rtdb.asia-southeast1.firebasedatabase.app
 ```
 
 ### 3.5. Tạo `.env.local`
@@ -144,7 +155,7 @@ VITE_FIREBASE_APP_ID=gia_tri_appId
 
 `databaseURL` phải lấy từ trang Realtime Database, không tự đoán URL.
 
-### 3.6. Deploy Database Rules
+### 3.6. Deploy Authentication và Database Rules
 
 Rules trong [database.rules.json](database.rules.json) bắt buộc người dùng đã đăng nhập ẩn danh, chỉ cho player sửa dữ liệu của chính họ và chỉ cho host điều khiển trận đấu.
 
@@ -154,13 +165,13 @@ Rules trong [database.rules.json](database.rules.json) bắt buộc người dù
 npx firebase-tools login
 ```
 
-Triển khai riêng rules, thay `YOUR_PROJECT_ID` bằng Project ID thực tế:
+Triển khai cấu hình Anonymous Authentication và Database Rules vào đúng project:
 
 ```bash
-npx firebase-tools deploy --only database --project YOUR_PROJECT_ID
+npx firebase-tools deploy --only auth,database --project trochoi-mln131-nbao261
 ```
 
-Luôn giữ `--only database --project ...` để không vô tình deploy Hosting hoặc ghi rules vào nhầm Firebase project. Khi deploy bằng CLI, file local sẽ ghi đè rules đang có trên Firebase Console.
+Luôn giữ `--only auth,database --project ...` để không vô tình deploy Hosting hoặc ghi cấu hình vào nhầm Firebase project. Khi deploy bằng CLI, file local sẽ ghi đè Database Rules đang có trên Firebase Console.
 
 ### 3.7. Xác nhận Firebase hoạt động
 
@@ -289,7 +300,7 @@ git revert COMMIT_SHA
 git push origin main
 ```
 
-Database Rules không có cơ chế rollback release giống Vercel. Trước khi sửa rules, luôn commit phiên bản đang chạy; nếu rules mới lỗi, khôi phục file từ Git rồi deploy lại bằng `--only database --project YOUR_PROJECT_ID`.
+Database Rules không có cơ chế rollback release giống Vercel. Trước khi sửa rules, luôn commit phiên bản đang chạy; nếu rules mới lỗi, khôi phục file từ Git rồi deploy lại bằng `--only auth,database --project trochoi-mln131-nbao261`.
 
 ## 8. Xử lý lỗi thường gặp
 
@@ -352,7 +363,7 @@ npm run build
 - `src/services`: adapter Firebase và demo localStorage.
 - `src/components`: giao diện host, player, biểu đồ và leaderboard.
 - `database.rules.json`: phân quyền host/player cho Realtime Database.
-- `firebase.json`: ánh xạ rules và cấu hình Firebase Hosting dự phòng.
+- `firebase.json`: cấu hình Anonymous Authentication, ánh xạ Database Rules và Firebase Hosting dự phòng.
 - `tasks/plan.md`: kế hoạch và quyết định kiến trúc.
 
 ## Tài liệu chính thức
