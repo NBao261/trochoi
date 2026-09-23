@@ -38,6 +38,7 @@ export interface GameState {
   phase: GamePhase
   questionIndex: number
   phaseStartedAt: number
+  questionStartedAt: number
   initialDurationMs: number
   reconsiderDurationMs: number
 }
@@ -50,4 +51,3 @@ export interface Room {
   players: Record<string, Player>
   submissions: Record<string, Record<string, Submission>>
 }
-

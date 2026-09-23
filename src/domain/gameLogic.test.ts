@@ -4,6 +4,7 @@ import {
   createRoomCode,
   nextPhase,
   rankPlayers,
+  scoreRoundPlayers,
 } from './gameLogic'
 
 describe('calculateRoundScore', () => {
@@ -73,5 +74,33 @@ describe('nextPhase', () => {
     expect(nextPhase('reveal', 0, 8)).toEqual({ phase: 'leaderboard', questionIndex: 0 })
     expect(nextPhase('leaderboard', 0, 8)).toEqual({ phase: 'initial', questionIndex: 1 })
     expect(nextPhase('leaderboard', 7, 8)).toEqual({ phase: 'finished', questionIndex: 7 })
+  })
+})
+
+describe('scoreRoundPlayers', () => {
+  it('scores every player once and adds answer time only for the current round', () => {
+    const players = {
+      an: { id: 'an', name: 'An', score: 1000, answerTimeMs: 5000, joinedAt: 1, lastRoundScore: 0 },
+      binh: { id: 'binh', name: 'Binh', score: 0, answerTimeMs: 0, joinedAt: 2, lastRoundScore: 0 },
+    }
+    const submissions = {
+      an: { initial: 'A' as const, final: null, initialAt: 12_000, finalAt: null },
+      binh: { initial: 'B' as const, final: 'A' as const, initialAt: 15_000, finalAt: 18_000 },
+    }
+
+    const scored = scoreRoundPlayers(players, submissions, 'A', 10_000, 1)
+
+    expect(scored.an).toMatchObject({ score: 2000, answerTimeMs: 7000, lastRoundScore: 1000 })
+    expect(scored.binh).toMatchObject({ score: 600, answerTimeMs: 5000, lastRoundScore: 600 })
+  })
+
+  it('gives zero points to players who did not answer', () => {
+    const players = {
+      an: { id: 'an', name: 'An', score: 200, answerTimeMs: 1000, joinedAt: 1, lastRoundScore: 100 },
+    }
+
+    const scored = scoreRoundPlayers(players, {}, 'A', 10_000, 1)
+
+    expect(scored.an).toMatchObject({ score: 200, answerTimeMs: 1000, lastRoundScore: 0 })
   })
 })

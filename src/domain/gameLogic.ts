@@ -1,4 +1,4 @@
-import type { Answer, GamePhase, Player } from './types'
+import type { Answer, GamePhase, Player, Submission } from './types'
 
 interface RoundScoreInput {
   initial: Answer
@@ -42,6 +42,40 @@ export function createRoomCode(random: () => number = Math.random): string {
   }).join('')
 }
 
+export function scoreRoundPlayers(
+  players: Record<string, Player>,
+  submissions: Record<string, Submission>,
+  correct: Answer,
+  phaseStartedAt: number,
+  multiplier: number,
+): Record<string, Player> {
+  return Object.fromEntries(
+    Object.entries(players).map(([id, player]) => {
+      const submission = submissions[id]
+      if (!submission) {
+        return [id, { ...player, lastRoundScore: 0 }]
+      }
+
+      const roundScore = calculateRoundScore({
+        initial: submission.initial,
+        final: submission.final,
+        correct,
+        multiplier,
+      })
+
+      return [
+        id,
+        {
+          ...player,
+          score: player.score + roundScore,
+          answerTimeMs: player.answerTimeMs + Math.max(0, submission.initialAt - phaseStartedAt),
+          lastRoundScore: roundScore,
+        },
+      ]
+    }),
+  )
+}
+
 export function nextPhase(
   phase: GamePhase,
   questionIndex: number,
@@ -64,4 +98,3 @@ export function nextPhase(
       return { phase, questionIndex }
   }
 }
-

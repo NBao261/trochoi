@@ -1,0 +1,24 @@
+{
+  "rules": {
+    "rooms": {
+      "$room": {
+        ".read": "auth != null",
+        ".write": "auth != null && ((!data.exists() && newData.child('hostId').val() === auth.uid) || data.child('hostId').val() === auth.uid)",
+        "players": {
+          "$uid": {
+            ".write": "auth != null && auth.uid === $uid && ((!data.exists() && newData.child('id').val() === auth.uid && newData.child('score').val() === 0 && newData.child('answerTimeMs').val() === 0) || (data.exists() && newData.child('id').val() === data.child('id').val() && newData.child('score').val() === data.child('score').val() && newData.child('answerTimeMs').val() === data.child('answerTimeMs').val() && newData.child('lastRoundScore').val() === data.child('lastRoundScore').val()))",
+            ".validate": "newData.hasChildren(['id', 'name', 'score', 'answerTimeMs', 'joinedAt', 'lastRoundScore']) && newData.child('name').isString() && newData.child('name').val().length > 0 && newData.child('name').val().length <= 24"
+          }
+        },
+        "submissions": {
+          "$question": {
+            "$uid": {
+              ".write": "auth != null && auth.uid === $uid && ((!data.exists() && root.child('rooms').child($room).child('game').child('phase').val() === 'initial') || (data.exists() && root.child('rooms').child($room).child('game').child('phase').val() === 'reconsider' && newData.child('initial').val() === data.child('initial').val() && newData.child('initialAt').val() === data.child('initialAt').val()))",
+              ".validate": "newData.hasChildren(['initial', 'initialAt']) && newData.child('initial').isString() && newData.child('initial').val().matches(/^(A|B|C|D)$/) && newData.child('initialAt').isNumber() && (!newData.child('final').exists() || (newData.child('final').isString() && newData.child('final').val().matches(/^(A|B|C|D)$/)))"
+            }
+          }
+        }
+      }
+    }
+  }
+}
