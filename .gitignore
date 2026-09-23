@@ -2,8 +2,12 @@ node_modules/
 dist/
 .env
 .env.local
+.env.*
+!.env.example
 *.log
 coverage/
 .playwright-mcp/
 artifacts/
 .DS_Store
+
+.vercel/

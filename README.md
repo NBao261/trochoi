@@ -2,6 +2,8 @@
 
 Quiz realtime cho lớp học, tối ưu khoảng 12 người. Mỗi người chơi dùng điện thoại để trả lời, xem lựa chọn của cả lớp, cân nhắc giữ hoặc đổi đáp án, sau đó xem bảng xếp hạng trực tiếp.
 
+**Production:** <https://trochoi-one.vercel.app>
+
 ## Kiến trúc triển khai
 
 ```text
@@ -240,7 +242,7 @@ Vite nhúng các biến `VITE_*` tại thời điểm build. Vì vậy, sau khi 
 
 1. Chọn **Deploy**.
 2. Chờ Vercel chạy `npm install` và `npm run build`.
-3. Khi trạng thái là **Ready**, mở URL dạng `https://trochoi-....vercel.app`.
+3. Khi trạng thái là **Ready**, mở URL production: <https://trochoi-one.vercel.app>.
 4. Vào **Project Settings → Domains** nếu muốn đổi sang tên miền `.vercel.app` dễ nhớ hơn.
 
 QR trong game lấy URL hiện tại của trang, vì vậy sau khi chạy trên Vercel, QR tự trỏ đúng tới bản production.
