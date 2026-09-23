@@ -4,5 +4,6 @@ dist/
 .env.local
 *.log
 coverage/
+.playwright-mcp/
+artifacts/
 .DS_Store
-
