@@ -1,6 +1,6 @@
 # Đa số chưa chắc đúng · MLN131
 
-Quiz realtime dành cho khoảng 12 người, thiết kế cho phiên chơi 8 câu trong 10 phút. Người chơi trả lời riêng, xem tỷ lệ lựa chọn của cả lớp rồi có 8 giây để giữ hoặc đổi đáp án.
+Quiz realtime dành cho khoảng 12 người, thiết kế cho phiên chơi 15 câu trong 10 phút. Người chơi trả lời riêng, xem tỷ lệ lựa chọn của cả lớp rồi có 8 giây để giữ hoặc đổi đáp án.
 
 ## Luồng chơi
 

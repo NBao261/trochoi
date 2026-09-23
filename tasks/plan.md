@@ -6,7 +6,7 @@ Xây một trò chơi quiz realtime cho môn MLN131, tối ưu cho 12 người v
 
 ## Product contract
 
-- Một trận gồm 8 câu (Câu 8–15 từ bộ đề đã cung cấp), mỗi vòng có hai pha: chọn ban đầu và cân nhắc lại.
+- Một trận gồm 15 câu (Câu 1–15 từ bộ đề đã cung cấp), mỗi vòng có hai pha: chọn ban đầu và cân nhắc lại.
 - Điểm: đúng ngay từ đầu 800; giữ đáp án đúng thêm 200; đổi từ sai sang đúng được 600; câu cuối nhân đôi. Thời gian chỉ phá hòa để giảm bất công giữa Wi-Fi và 5G.
 - Host điều khiển nhịp trận; người chơi chỉ thấy dữ liệu cần thiết trên màn hình nhỏ.
 - Mục tiêu 12 người, không đăng ký tài khoản, không có server tự vận hành.
@@ -74,7 +74,7 @@ Xây một trò chơi quiz realtime cho môn MLN131, tối ưu cho 12 người v
 | Độ trễ Wi-Fi/5G khác nhau | Điểm tốc độ thiếu công bằng | Không dùng tốc độ làm điểm chính; chỉ dùng thời gian phá hòa |
 | Người chơi sửa dữ liệu client | Sai bảng điểm | Chỉ host ghi điểm; rules giới hạn player vào vùng submission của chính họ |
 
-## Open questions
+## Nội dung đã chốt
 
-- Chưa có Câu 1–7, nên phiên bản này dùng đúng 8 câu từ Câu 8–15.
+- Bộ đề gồm đủ 15 câu từ Câu 1–15; các đoạn lặp hoặc dính lỗi trong nội dung nguồn không được đưa vào game.
 - Firebase project và URL deploy sẽ do người dùng cấu hình theo README vì cần tài khoản của người dùng.

@@ -4,7 +4,7 @@
 
 **Acceptance criteria**
 - [x] React + TypeScript chạy bằng Vite.
-- [x] Có 8 câu hỏi Câu 8–15 và kiểu dữ liệu game rõ ràng.
+- [x] Có đủ 15 câu hỏi Câu 1–15 và kiểu dữ liệu game rõ ràng.
 - [x] Có design tokens mobile-first và khung accessibility cơ bản.
 
 **Verification**

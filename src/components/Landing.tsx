@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from 'react'
 import { ArrowRight, Gamepad2, Presentation, Sparkles, Users } from 'lucide-react'
+import { QUESTIONS } from '../domain/questions'
 import { normalizeRoomCode, type ServiceMode } from '../services/roomService'
 
 interface LandingProps {
@@ -29,7 +30,7 @@ export function Landing({ busy, invitedCode, mode, onCreate, onJoin }: LandingPr
         </p>
         <div className="hero__facts" aria-label="Thông tin trận đấu">
           <span><Users size={18} aria-hidden="true" /> Tối ưu 12 người</span>
-          <span><Gamepad2 size={18} aria-hidden="true" /> 8 câu · 10 phút</span>
+          <span><Gamepad2 size={18} aria-hidden="true" /> {QUESTIONS.length} câu · 10 phút</span>
         </div>
       </section>
 
@@ -89,4 +90,3 @@ export function Landing({ busy, invitedCode, mode, onCreate, onJoin }: LandingPr
     </main>
   )
 }
-

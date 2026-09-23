@@ -2,8 +2,92 @@ import type { Question } from './types'
 
 export const QUESTIONS: Question[] = [
   {
+    id: 1,
+    prompt: 'Thuật ngữ “Dân chủ” (Demoskratos) ra đời vào khoảng thế kỷ VII–VI TCN ở quốc gia cổ đại nào?',
+    options: {
+      A: 'La Mã cổ đại',
+      B: 'Hy Lạp cổ đại',
+      C: 'Ai Cập cổ đại',
+      D: 'Ấn Độ cổ đại',
+    },
+    correct: 'B',
+    explanation: 'Thuật ngữ bắt nguồn từ Hy Lạp cổ đại, kết hợp “demos” (nhân dân) và “kratos” (quyền lực, cai trị).',
+  },
+  {
+    id: 2,
+    prompt: 'Theo quan điểm của chủ nghĩa Mác–Lênin, bản chất chính trị của nền dân chủ xã hội chủ nghĩa được thể hiện như thế nào?',
+    options: {
+      A: 'Là sự thống trị chính trị của giai cấp tư sản đối với toàn xã hội',
+      B: 'Là sự lãnh đạo chính trị của giai cấp công nhân thông qua Đảng Cộng sản đối với toàn xã hội',
+      C: 'Nhân dân lãnh đạo – Đảng quản lý – Nhà nước làm chủ',
+      D: 'Các đoàn thể lãnh đạo – Nhà nước quản lý – Nhân dân làm chủ',
+    },
+    correct: 'B',
+    explanation: 'Theo quan điểm Mác–Lênin, quyền lực chính trị của giai cấp công nhân được thực hiện thông qua vai trò lãnh đạo của Đảng Cộng sản.',
+  },
+  {
+    id: 3,
+    prompt: 'V.I. Lênin từng đánh giá như thế nào khi so sánh giữa chế độ dân chủ vô sản (dân chủ XHCN) với chế độ dân chủ tư sản?',
+    options: {
+      A: 'Dân chủ vô sản hoàn toàn giống với dân chủ tư sản về bản chất',
+      B: 'Dân chủ vô sản hạn chế hơn dân chủ tư sản về quyền tự do cá nhân',
+      C: 'Dân chủ vô sản dân chủ hơn gấp triệu lần so với bất cứ chế độ dân chủ tư sản nào',
+      D: 'Dân chủ tư sản là đỉnh cao tuyệt đối không thể vượt qua của dân chủ',
+    },
+    correct: 'C',
+    explanation: 'Lênin nhấn mạnh tính ưu việt của dân chủ vô sản đối với đại đa số nhân dân so với dân chủ tư sản.',
+  },
+  {
+    id: 4,
+    prompt: 'Trong tư tưởng Hồ Chí Minh, bản chất của nền dân chủ nước ta được đúc kết ngắn gọn qua cụm từ nào?',
+    options: {
+      A: 'Dân là chủ và dân làm chủ',
+      B: 'Đa đảng cạnh tranh tự do',
+      C: 'Tự do tuyệt đối không cần pháp luật',
+      D: 'Quản lý xã hội không cần nhà nước',
+    },
+    correct: 'A',
+    explanation: '“Dân là chủ” nói về vị thế của nhân dân; “dân làm chủ” nói về việc nhân dân thực hành quyền làm chủ.',
+  },
+  {
+    id: 5,
+    prompt: 'Bản chất kinh tế của nền dân chủ xã hội chủ nghĩa dựa trên chế độ sở hữu nào về tư liệu sản xuất chủ yếu?',
+    options: {
+      A: 'Chế độ tư hữu tư bản chủ nghĩa',
+      B: 'Chế độ sở hữu hỗn hợp tư nhân và nhà nước',
+      C: 'Chế độ sở hữu xã hội (công hữu) về tư liệu sản xuất chủ yếu',
+      D: 'Chế độ sở hữu của các tập đoàn xuyên quốc gia',
+    },
+    correct: 'C',
+    explanation: 'Bản chất kinh tế của dân chủ XHCN dựa trên chế độ công hữu đối với những tư liệu sản xuất chủ yếu.',
+  },
+  {
+    id: 6,
+    prompt: 'Yếu tố nào giữ vai trò là “điều kiện tiên quyết” để bảo đảm và phát triển nền dân chủ xã hội chủ nghĩa ở Việt Nam?',
+    options: {
+      A: 'Sự tồn tại của nhiều đảng phái đối lập',
+      B: 'Sự lãnh đạo duy nhất của Đảng Cộng sản Việt Nam',
+      C: 'Áp dụng mô hình tam quyền phân lập tuyệt đối',
+      D: 'Tự do hóa kinh tế hoàn toàn không có sự quản lý của Nhà nước',
+    },
+    correct: 'B',
+    explanation: 'Theo giáo trình, sự lãnh đạo của Đảng Cộng sản Việt Nam là điều kiện tiên quyết để xây dựng nền dân chủ XHCN.',
+  },
+  {
+    id: 7,
+    prompt: 'Cơ chế vận hành tổng quát của hệ thống chính trị xã hội chủ nghĩa ở Việt Nam là gì?',
+    options: {
+      A: 'Nhà nước lãnh đạo – Đảng quản lý – Nhân dân làm chủ',
+      B: 'Đảng lãnh đạo – Nhà nước quản lý – Nhân dân làm chủ',
+      C: 'Nhân dân lãnh đạo – Đảng quản lý – Nhà nước làm chủ',
+      D: 'Các đoàn thể lãnh đạo – Nhà nước quản lý – Nhân dân làm chủ',
+    },
+    correct: 'B',
+    explanation: 'Cơ chế vận hành được khái quát là: Đảng lãnh đạo, Nhà nước quản lý, Nhân dân làm chủ.',
+  },
+  {
     id: 8,
-    prompt: 'Phương châm thực hiện dân chủ ở cơ sở tại Việt Nam hiện nay gồm những nội dung nào?',
+    prompt: 'Phương châm thực hiện dân chủ ở cơ sở tại Việt Nam hiện nay bao gồm những nội dung nào?',
     options: {
       A: 'Dân biết, dân bàn, dân làm, dân kiểm tra, dân giám sát, dân thụ hưởng',
       B: 'Dân biết, dân bàn, dân làm, dân tự quyết, dân chịu trách nhiệm',
@@ -15,10 +99,10 @@ export const QUESTIONS: Question[] = [
   },
   {
     id: 9,
-    prompt: 'Nhân dân bầu đại biểu Quốc hội và Hội đồng nhân dân các cấp là hình thức dân chủ nào?',
+    prompt: 'Việc nhân dân bầu ra đại biểu Quốc hội và Hội đồng nhân dân các cấp là biểu hiện của hình thức dân chủ nào?',
     options: {
       A: 'Dân chủ trực tiếp',
-      B: 'Dân chủ gián tiếp (dân chủ đại diện)',
+      B: 'Dân chủ gián tiếp (Dân chủ đại diện)',
       C: 'Dân chủ nguyên thủy',
       D: 'Dân chủ phi thể chế',
     },
@@ -27,10 +111,10 @@ export const QUESTIONS: Question[] = [
   },
   {
     id: 10,
-    prompt: 'Điều 4 Hiến pháp năm 2013 khẳng định vai trò nào của Đảng Cộng sản Việt Nam?',
+    prompt: 'Điều 4 Hiến pháp năm 2013 của nước Cộng hòa xã hội chủ nghĩa Việt Nam khẳng định vai trò gì của Đảng Cộng sản Việt Nam?',
     options: {
       A: 'Là lực lượng lãnh đạo Nhà nước và xã hội',
-      B: 'Là tổ chức chính trị tham gia tranh cử định kỳ',
+      B: 'Là một tổ chức chính trị tham gia tranh cử định kỳ',
       C: 'Là cơ quan hành chính nhà nước cao nhất',
       D: 'Là cơ quan xét xử tư pháp tối cao',
     },
@@ -39,31 +123,31 @@ export const QUESTIONS: Question[] = [
   },
   {
     id: 11,
-    prompt: 'Khác biệt căn bản về bản chất chính trị giữa dân chủ XHCN và dân chủ tư sản là gì?',
+    prompt: 'Khác biệt căn bản về bản chất chính trị giữa nền dân chủ XHCN và nền dân chủ tư sản là gì?',
     options: {
-      A: 'Dân chủ XHCN nhất nguyên do Đảng Cộng sản lãnh đạo; dân chủ tư sản đa nguyên, đa đảng',
-      B: 'Dân chủ XHCN không dùng pháp luật; dân chủ tư sản dùng pháp luật',
-      C: 'Dân chủ tư sản phục vụ đại đa số; dân chủ XHCN phục vụ thiểu số',
-      D: 'Dân chủ XHCN bãi bỏ hoàn toàn các cuộc bầu cử',
+      A: 'Nền dân chủ XHCN mang cơ chế nhất nguyên chính trị do Đảng Cộng sản lãnh đạo; nền dân chủ tư sản mang cơ chế đa nguyên, đa đảng',
+      B: 'Nền dân chủ XHCN không dùng pháp luật; nền dân chủ tư sản dùng pháp luật',
+      C: 'Nền dân chủ tư sản phục vụ đại đa số; nền dân chủ XHCN phục vụ thiểu số',
+      D: 'Nền dân chủ XHCN bãi bỏ hoàn toàn các cuộc bầu cử',
     },
     correct: 'A',
     explanation: 'Sự khác biệt nằm ở bản chất giai cấp và cơ chế tổ chức quyền lực chính trị.',
   },
   {
     id: 12,
-    prompt: 'Vì sao quan điểm “phải đa đảng mới có dân chủ” không đúng về lý luận và thực tiễn?',
+    prompt: 'Vì sao quan điểm cho rằng “phải đa đảng mới có dân chủ” là không đúng về mặt lý luận và thực tiễn?',
     options: {
-      A: 'Số lượng đảng không quyết định bản chất dân chủ; cốt lõi là quyền lực thuộc về ai và phục vụ ai',
-      B: 'Các quốc gia đa đảng đều không tổ chức bầu cử',
-      C: 'Chế độ một đảng không bao giờ có bất kỳ hạn chế nào',
-      D: 'Đa đảng chỉ tồn tại trong thời kỳ phong kiến',
+      A: 'Vì số lượng đảng phái không quyết định bản chất dân chủ, mà quan trọng là quyền lực thực sự thuộc về ai và phục vụ lợi ích của giai cấp nào',
+      B: 'Vì các quốc gia đa đảng trên thế giới đều không tổ chức bầu cử',
+      C: 'Vì chế độ một đảng không bao giờ có bất kỳ hạn chế nào',
+      D: 'Vì đa đảng chỉ tồn tại trong thời kỳ phong kiến',
     },
     correct: 'A',
     explanation: 'Bản chất dân chủ được đánh giá qua chủ thể nắm quyền lực và lợi ích mà quyền lực phục vụ.',
   },
   {
     id: 13,
-    prompt: 'Nhà nước pháp quyền xã hội chủ nghĩa Việt Nam được tổ chức và hoạt động theo nguyên tắc cốt lõi nào?',
+    prompt: 'Bộ máy Nhà nước pháp quyền xã hội chủ nghĩa Việt Nam được tổ chức và hoạt động theo nguyên tắc cốt lõi nào?',
     options: {
       A: 'Tam quyền phân lập',
       B: 'Tập trung dân chủ',
@@ -75,10 +159,10 @@ export const QUESTIONS: Question[] = [
   },
   {
     id: 14,
-    prompt: 'Luận điệu “đa nguyên chính trị, đa đảng đối lập” ở Việt Nam được cổ xúy nhằm mục đích gì?',
+    prompt: 'Việc các thế lực thù địch cố tình cổ xúy luận điệu “đa nguyên chính trị, đa đảng đối lập” ở Việt Nam thực chất nhằm mục đích gì?',
     options: {
       A: 'Mở rộng quyền làm chủ thực sự cho nhân dân lao động',
-      B: 'Thực hiện “diễn biến hòa bình”, xóa bỏ vai trò lãnh đạo của Đảng và chế độ XHCN',
+      B: 'Thực hiện chiến lược “diễn biến hòa bình”, xóa bỏ vai trò lãnh đạo của Đảng và chế độ XHCN',
       C: 'Thúc đẩy tăng trưởng kinh tế nhanh hơn',
       D: 'Nâng cao trình độ dân trí cho người dân',
     },
@@ -87,12 +171,12 @@ export const QUESTIONS: Question[] = [
   },
   {
     id: 15,
-    prompt: 'Trong nền dân chủ XHCN ở Việt Nam, dân chủ có vị trí thế nào với sự phát triển đất nước?',
+    prompt: 'Trong nền dân chủ xã hội chủ nghĩa ở Việt Nam, dân chủ được xác định có vị trí như thế nào đối với sự phát triển đất nước?',
     options: {
-      A: 'Vừa là mục tiêu, vừa là động lực của sự phát triển đất nước',
-      B: 'Chỉ là công cụ hình thức',
-      C: 'Là yếu tố phụ thuộc hoàn toàn vào bên ngoài',
-      D: 'Tách rời khỏi kỷ cương và pháp luật',
+      A: 'Dân chủ vừa là mục tiêu, vừa là động lực của sự phát triển đất nước',
+      B: 'Dân chủ chỉ là công cụ hình thức',
+      C: 'Dân chủ là yếu tố phụ thuộc hoàn toàn vào bên ngoài',
+      D: 'Dân chủ tách rời khỏi kỷ cương và pháp luật',
     },
     correct: 'A',
     explanation: 'Dân chủ vừa định hướng kết quả cần đạt, vừa tạo động lực huy động sức dân cho phát triển.',
