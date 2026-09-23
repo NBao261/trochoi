@@ -76,7 +76,6 @@ export function Lobby({ room, isHost, player, busy, onStart }: LobbyProps) {
           )) : <p className="empty-player">Chưa có ai vào phòng — mã QR đang chờ được quét.</p>}
         </div>
         <div className="lobby__footer">
-          <p>Khuyến nghị 8–16 người · Không cần đăng nhập</p>
           <button className="button button--primary button--large" onClick={onStart} disabled={busy || players.length === 0}>
             <Play size={19} fill="currentColor" aria-hidden="true" /> Bắt đầu với {players.length} người
           </button>

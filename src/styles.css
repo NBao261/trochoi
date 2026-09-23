@@ -316,13 +316,13 @@ a:focus-visible {
 .hero h1 {
   max-width: 760px;
   margin: 20px 0 24px;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
   font-size: clamp(3.6rem, 8vw, 7.6rem);
-  line-height: .88;
-  letter-spacing: -.07em;
-  font-weight: 700;
+  line-height: .94;
+  letter-spacing: -.055em;
+  font-weight: 900;
 }
-.hero h1 em { color: var(--brand); font-weight: inherit; }
+.hero h1 em { color: var(--brand); font-style: normal; font-weight: inherit; }
 .hero__lead { max-width: 610px; margin: 0; color: var(--ink-soft); font-size: clamp(1.05rem, 1.8vw, 1.28rem); line-height: 1.65; }
 .hero__facts { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 12px 24px; color: var(--ink); font-size: .9rem; font-weight: 700; }
 .hero__facts span { display: inline-flex; align-items: center; gap: 8px; }
@@ -367,8 +367,7 @@ a:focus-visible {
 .player-chip svg { color: var(--brand); }
 @keyframes chip-in { from { opacity: 0; transform: translateY(8px) scale(.96); } }
 .empty-player { margin: auto; max-width: 310px; color: var(--ink-soft); text-align: center; line-height: 1.6; }
-.lobby__footer { padding-top: 22px; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-.lobby__footer p { margin: 0; color: var(--ink-soft); font-size: .78rem; }
+.lobby__footer { padding-top: 22px; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: flex-end; gap: 20px; }
 .waiting-stage { min-height: calc(100vh - 80px); padding-bottom: 70px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
 .waiting-orbit { width: 88px; height: 88px; margin-bottom: 28px; border: 1px solid var(--line); border-radius: 50%; display: grid; place-items: center; color: white; background: var(--brand); box-shadow: 0 0 0 14px rgb(123 36 52 / 8%), 0 0 0 28px rgb(123 36 52 / 4%); }
 .waiting-stage h1 { margin: 10px 0 8px; font-family: Georgia, serif; font-size: clamp(2.4rem, 8vw, 4.5rem); }
